@@ -1,21 +1,21 @@
 import styled from "styled-components";
 import Image from "next/image";
 export const TableWrapperStyle = styled.div`
-  width: 100%;
+  width: 90%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   margin: 0 auto;
-  `
+`;
 export const TabStyle = styled.div`
   display: flex;
   align-items: center;
-    gap: 20px;
-    width: 100%;
-    justify-content: center;
-  `
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+`;
 export const TabButtonStyle = styled.button`
   border: none;
   outline: none;
@@ -24,34 +24,148 @@ export const TabButtonStyle = styled.button`
   line-height: 18px;
   cursor: pointer;
   font-weight: 400;
-  color: #0B2F59;
-;
-  `
+  color: #0b2f59; ;
+`;
 export const ImageTabStyle = styled.div`
   display: flex;
-    align-items: center;
- 
-    
-  `
+  align-items: center;
+  position: sticky;
+  top: 0;
+`;
 export const ImageContainerStyle = styled.div`
   display: flex;
   align-items: center;
-flex-direction: column;
-  width: 230.75px;
-  height: 220px;
+  flex-direction: column;
   gap: 10px;
-  border-radius: 5px;
-background-color: #fff;
-padding: 20px;
-background-color: #F0F4F8;
-border: 1px solid #E5E5E5;
+  margin:0;
+  padding:0;
+  min-width: 246px;
+  width: 246px;
+  &:first-child{
+    min-width: 193px;
+    width: 194px;
+  }
+  & .check{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+   
+  }
 
-  `
+
+`;
 export const ImageStyle = styled(Image)`
-${props => props.width && 'width: ' + props.width + 'px'};
- ${props => props.height && 'height: ' + props.height + 'px'};
-border-radius: 5px;
+  ${(props) => props.width && "width: " + props.width + "px"};
+  ${(props) => props.height && "height: " + props.height + "px"};
+  border-radius: 5px;
+
+`;
+
+export const TableStyle = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  background-color: #fff;
+  & thead{
+    border-bottom: 1px solid #e5e5e5;
+
+    & th{
+      padding:0;
+      margin:0;
+      font-size: 12px;
+ 
+     &:first-child{
+      padding:9px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 800;
+      color: #0b2f59;
+      text-align: left;
+      background-color:#F0F4F8;
+      width:193px !important;
+      min-width: 193px !important;
+      /* border-right: 1px solid #e5e5e5 */
+     }
+      &:last-child{
+        border-right: none;
+      }
+    }
+
+  }
+  & tr{
+    border-bottom: 1px solid #e5e5e5;
+    &:last-child{
+      border-bottom: none;
+    }
+
+    & td{
+      padding: 10px;
+      font-size: 12px;
+      line-height: 18px;
+      font-weight: 400;
+      color: #0b2f59;
+      text-align: left;
+      width:225px;
+      min-width: 225px;
+      border: 1px solid #e5e5e5;
+      &:first-child{
+        font-weight: 700;
+        width:192px;
+        min-width: 192px;
+      }
+      &:last-child{
+        border-right: none;
+      }
 
 
+    }
+   
+  }
+  & tr:nth-child(odd){
+      background-color:  #F8F9FB;
+      
+    }
+
+    &:first-of-type{
+      position: sticky;
+      top: 0;
+    }
+    & tbody{
+
+      & th{
+        padding: 10px;
+        font-size: 12px;
+        min-width:192px !important;
+        width:192px !important;
   
-  `
+      }
+    }
+
+`;
+
+export const TableContainerStyle = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const ThImageStyle = styled.th`
+
+border:1px solid #e5e5e5;
+background-color:#F0F4F8;
+width:245px;
+min-width: 245px ;
+&:first-child{
+  width:193px !important;
+  min-width: 193px !important;
+  
+}
+
+
+`
+
+
+
+
