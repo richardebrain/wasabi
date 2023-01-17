@@ -6,7 +6,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import FileUplaodIcon from '../../../public/fileUpload.svg'
 
-type refProps = React.MutableRefObject<HTMLTableCellElement | null>
 
 const HomeTableWrapper = () => {
     const [toggle, setToggle] = useState(false)
@@ -29,7 +28,7 @@ const HomeTableWrapper = () => {
     const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
         console.log(e.target.checked)
     }
-    const gotTorRef = (ref) => {
+    const gotTorRef = (ref: React.RefObject<HTMLTableHeaderCellElement>) => {
         window.scrollTo({
             top: ref.current?.offsetTop,
             behavior: 'smooth',
