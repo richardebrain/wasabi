@@ -5,19 +5,19 @@ export const headerNav = [
     },
 
     {
-        route: '/about',
+        route: '/',
         name: 'About',
     },
     {
-        route: '/solution',
+        route: '/',
         name: 'Solution',
     },
     {
-        route: '/pricing',
+        route: '/',
         name: 'Pricing',
     },
     {
-        route: '/contact',
+        route: '/',
         name: 'Contact',
     },
 ]

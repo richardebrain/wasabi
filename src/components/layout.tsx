@@ -13,7 +13,8 @@ const LayoutDiv = styled.div`
   position: relative;
 
   & .ads{
-    background-color: #fff;
+    background-color: #FAFEFF;
+
     width:970px;
     height: 90px;
     margin: 0 auto;

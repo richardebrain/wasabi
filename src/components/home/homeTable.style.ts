@@ -41,17 +41,15 @@ export const ImageContainerStyle = styled.div`
   padding: 0;
   min-width: 193px;
   width: 194px;
-  
+
   & .check {
     display: flex;
     align-items: center;
     cursor: pointer;
   }
-  &:nth-child(2){
+  &:nth-child(2) {
     width: 225px;
     min-width: 225px;
-    
-   
   }
 `;
 export const ImageStyle = styled(Image)`
@@ -143,7 +141,7 @@ export const TableContainerStyle = styled.div`
   align-items: center;
 `;
 export const ThImageStyle = styled.th`
-border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
   background-color: #f0f4f8;
   width: 245px;
   min-width: 245px;
@@ -152,30 +150,24 @@ border-left: 1px solid #e5e5e5;
     width: 193px !important;
     min-width: 193px !important;
   }
-
-
 `;
 export const FileInputStyle = styled.input.attrs({
   type: "file",
   accept: "image/*",
-
 })`
   display: none;
- ${props => props.disabled && ` cursor: not-allowed;`}
-  
-  `
+  ${(props) => props.disabled && ` cursor: not-allowed;`}
+`;
 
 export const FileLabelStyle = styled.label`
   cursor: not-allowed !important;
- height:150px;
- width:198.75px;
-border: 4px dotted #e5e5e5;
-display: flex;
-
-    `
-
-    export const GreaterStyle =styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    `
+  height: 150px;
+  width: 198.75px;
+  border: 4px dotted #e5e5e5;
+  display: flex;
+`;
+export const GreaterStyle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;

@@ -8,17 +8,17 @@ import FileUplaodIcon from '../../../public/fileUpload.svg'
 
 
 const HomeTableWrapper = () => {
-    const [toggle, setToggle] = useState(false)
-    const scrollToRef = useRef<HTMLTableHeaderCellElement>(null)
     const router = useRouter()
     const formatRoute = router.asPath.substring(2).replace(/%20/g, ' ')
+    const [toggle, setToggle] = useState(false)
+
+    const scrollToRef = useRef<HTMLTableHeaderCellElement>(null)
 
     const toggleCheck = () => {
         setToggle(!toggle)
     }
     const [file, setFile] = useState({ image: '' })
     const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target)
         if (!e?.target?.files) return
         const file = e?.target?.files[0] as File
         const image = URL.createObjectURL(file)
@@ -26,14 +26,15 @@ const HomeTableWrapper = () => {
     }
 
     const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.checked)
+        const { name, checked } = e.target
+
     }
     const gotTorRef = (ref: React.RefObject<HTMLTableHeaderCellElement>) => {
-        window.scrollTo({
-            top: ref.current?.offsetTop,
+        console.log(window.scrollTo({
+            top: 400,
             behavior: 'smooth',
-            left: 0
-        })
+            left: 100
+        }))
 
     }
     return (
@@ -147,7 +148,12 @@ const HomeTableWrapper = () => {
                                                         <td key={index}>
                                                             {
                                                                 findMax(item[1]).max == school[1] && findMax(item[1]).max !== 1 ? (<GreaterStyle>
-                                                                    {school[1]} <input type="checkbox" checked onChange={(e) => handleCheck(e)} />
+                                                                    {school[1]}
+                                                                    <label htmlFor="">
+
+                                                                        <input type="checkbox" checked onChange={(e) => handleCheck(e)} />
+                                                                        <span className='custom'></span>
+                                                                    </label>
                                                                 </GreaterStyle>) : school[1]
                                                             }
 
