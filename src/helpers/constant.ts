@@ -145,7 +145,7 @@ type tableBodyProps = {
 			school1: string;
 			school2: string;
 		};
-	};	
+	};
 	"TEACHER STATS": {
 		"SCHOOL UNIFORM": {
 			school1: string;
@@ -179,7 +179,7 @@ type tableBodyProps = {
 
 
 }
-export const tableBodyArrayObject:tableBodyProps = {
+export const tableBodyArrayObject: tableBodyProps = {
 	"FINDEET RATING": {
 		"STUDENT-TEACHER RATIO": {
 			school1: "89",
@@ -250,7 +250,7 @@ export const tableBodyArrayObject:tableBodyProps = {
 			school2: "1pm",
 		},
 	},
-	
+
 }
 
 
@@ -289,15 +289,15 @@ export const convertedObject = convertObjectToArray(tableBodyArrayObject);
 
 
 
-export const findMax = (item: any) => {
-// get the highest value in the object
-const max = Math.max(...Object.values(item));
-// get the key of the highest value
-const key = Object.keys(item).filter((key) => item[key] === max);
-// return the key and value
-return {
-	max,
-	key
-};
-	
+export const findMax = (item:any) => {
+	// get the highest value in the object
+	const max = Math.max(...Object.values(item as string | number));
+	// get the key of the highest value
+	const key = Object.keys(item).filter((key) => item[key] === max);
+	// return the key and value
+	return {
+		max,
+		key
+	};
+
 }
