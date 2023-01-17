@@ -4,25 +4,43 @@ import Header from './header/header'
 
 const LayoutDiv = styled.div`
   background-color: #F8F9FB;
-  height: 2708px;
+  height:1800px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 100px;
+  justify-content: space-between;
+  position: relative;
+
+  & .ads{
+    background-color: #fff;
+    width:970px;
+    height: 90px;
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+    line-height: 90px;
+    border-radius: 10px;
+
+  }
   
   `
-type LayoutProps ={
+type LayoutProps = {
     children: React.ReactNode
 }
 
 
 
-const Layout = ({children} : LayoutProps) => {
+const Layout = ({ children }: LayoutProps) => {
     return (
         <LayoutDiv>
             <Header />
-            
-                {children}
-            
+
+            {children}
+            <div className='ads '>
+                Adds
+            </div>
+
         </LayoutDiv>
     )
 }

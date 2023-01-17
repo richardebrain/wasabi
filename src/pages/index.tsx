@@ -2,7 +2,8 @@ import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import { MainStyle } from '@/styles/home.styled'
 import CustomInput from '@/components/customInput/input'
-import HomeTableWrapper from '@/components/home/homeTableWrapper'
+import HomeTableWrapper from '@/components/home/homeTableWrapper' 
+import SearchIcon from '../../public/search.svg'
 
 
 export default function Home() {
@@ -25,8 +26,8 @@ export default function Home() {
 
           </div>
         </div>
-        <CustomInput height='48' width='720' />
-        <HomeTableWrapper/>
+        <CustomInput height='48' width='720' icon={<SearchIcon/>}/>
+        <HomeTableWrapper />
 
 
 

@@ -28,5 +28,16 @@ export const InputContainer = styled.div`
     
     display: flex;
     align-items: center;
+    position:relative;
+    & .icon{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+       cursor:text;
+       color: #8796A7;
+        width: 20px;
+        height: 20px;
+    }
     
     `

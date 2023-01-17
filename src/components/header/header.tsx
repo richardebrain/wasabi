@@ -4,6 +4,8 @@ import React from 'react'
 import { Headerstyle, LinkStyle, NavStyle, SearchContainer, TitleStyle, UserAvatar } from './header.styled'
 import MenuIcon from '../../../public/menu.svg'
 import CustomInput from '../customInput/input'
+import SearchIcon from '../../../public/search.svg'
+
 
 
 const Header = () => {
@@ -27,7 +29,7 @@ const Header = () => {
           </div>
         </div>
         <SearchContainer>
-          <CustomInput />
+          <CustomInput icon={<SearchIcon />} />
           <div className='avatar-container'>
 
             <UserAvatar />
