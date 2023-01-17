@@ -10,7 +10,7 @@ type refProps = React.MutableRefObject<HTMLTableCellElement | null>
 
 const HomeTableWrapper = () => {
     const [toggle, setToggle] = useState(false)
-    const scrollToRef = useRef<refProps>(null)
+    const scrollToRef = useRef<HTMLTableHeaderCellElement>(null)
     const router = useRouter()
     const formatRoute = router.asPath.substring(2).replace(/%20/g, ' ')
 
@@ -29,14 +29,24 @@ const HomeTableWrapper = () => {
     const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
         console.log(e.target.checked)
     }
+    const gotTorRef = (ref) => {
+        window.scrollTo({
+            top: ref.current?.offsetTop,
+            behavior: 'smooth',
+            left: 0
+        })
 
+    }
     return (
         <TableWrapperStyle>
             {/* tab */}
             <TabStyle className="tab">
                 {convertedObject.keys.map((tab, index) => (
                     <Link key={index} href={`#${tab}`} legacyBehavior >
-                        <TabLinkStyle onClick={() => scrollToRef.current?.current?.scrollIntoView({ behavior: 'smooth' })} className={`${formatRoute === tab ? 'active' : ''}`}>
+                        <TabLinkStyle
+                            onClick={() => gotTorRef(scrollToRef)}
+                            className={`${formatRoute === tab ? 'active' : ''}`}
+                        >
 
                             {tab.toUpperCase()}
                         </TabLinkStyle>
@@ -137,7 +147,7 @@ const HomeTableWrapper = () => {
                                                     Object.entries(item[1]).map((school, index) => (
                                                         <td key={index}>
                                                             {
-                                                                findMax(item[1]).max == school[1] && findMax(item[1]).max !== 1? (<GreaterStyle>
+                                                                findMax(item[1]).max == school[1] && findMax(item[1]).max !== 1 ? (<GreaterStyle>
                                                                     {school[1]} <input type="checkbox" checked onChange={(e) => handleCheck(e)} />
                                                                 </GreaterStyle>) : school[1]
                                                             }
