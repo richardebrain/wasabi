@@ -81,6 +81,7 @@ const HomeTableWrapper = () => {
                                                 <ImageStyle src={school.image
                                                 } alt={school.schoolName} width={198.75} height={160}
                                                     priority
+                                                    referrerPolicy='no-referrer'
                                                 />
                                                 <p>{school.schoolName}</p>
                                             </>)}
