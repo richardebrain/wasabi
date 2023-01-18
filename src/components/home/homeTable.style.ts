@@ -16,19 +16,24 @@ export const TabStyle = styled.div`
   width: 100%;
   justify-content: center;
 `;
-export const TabLinkStyle = styled.a`
+export const TabLinkStyle = styled.button`
   border: none;
   outline: none;
   font-size: 12px;
   line-height: 18px;
   cursor: pointer;
-  font-weight: 800;
-  color: #0b2f59;
+  font-weight: 400;
+  color: #0B2F59;
   text-decoration: none;
-  &.active {
-    color: #0079d2;
-    border-bottom: 2px solid #0079d2;
+  background-color:transparent;
+  padding: 0;
+
+  &:focus{
+font-weight:600;
+    color: #0079D2;
+    border-bottom: 2px solid #0079D2;
   }
+
 `;
 
 export const ImageContainerStyle = styled.div`

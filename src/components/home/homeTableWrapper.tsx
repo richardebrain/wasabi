@@ -8,16 +8,20 @@ import FileUplaodIcon from '../../../public/fileUpload.svg'
 
 
 const HomeTableWrapper = () => {
-    const router = useRouter()
-    const formatRoute = router.asPath.substring(2).replace(/%20/g, ' ')
+    const refs = convertedObject.keys.reduce((acc, value) => {
+        acc[value] = React.createRef<HTMLTableHeaderCellElement>()
+        return acc
+
+    }, {} as { [key: string]: React.RefObject<HTMLTableHeaderCellElement> })
+
     const [toggle, setToggle] = useState(false)
 
-    const scrollToRef = useRef<HTMLTableHeaderCellElement>(null)
 
     const toggleCheck = () => {
         setToggle(!toggle)
     }
     const [file, setFile] = useState({ image: '' })
+
     const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!e?.target?.files) return
         const file = e?.target?.files[0] as File
@@ -29,28 +33,28 @@ const HomeTableWrapper = () => {
         const { name, checked } = e.target
 
     }
-    const gotTorRef = (ref: React.RefObject<HTMLTableHeaderCellElement>) => {
-        console.log(window.scrollTo({
-            top: 400,
-            behavior: 'smooth',
-            left: 100
-        }))
+    const gotToRef = (id: string) => {
+        refs[id].current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        console.log(refs[id].current?.id)
 
     }
     return (
         <TableWrapperStyle>
             {/* tab */}
             <TabStyle className="tab">
-                {convertedObject.keys.map((tab, index) => (
-                    <Link key={index} href={`#${tab}`} legacyBehavior >
-                        <TabLinkStyle
-                            onClick={() => gotTorRef(scrollToRef)}
-                            className={`${formatRoute === tab ? 'active' : ''}`}
-                        >
+                {convertedObject.keys.map((tab: string, index: number) => (
 
-                            {tab.toUpperCase()}
-                        </TabLinkStyle>
-                    </Link>
+                    <TabLinkStyle
+                        id={tab}
+                        onClick={() => gotToRef(tab)}
+                        // className={`${refs[tab].current?.id  === tab ? 'active' : ''}`}
+                        key={tab}
+
+                    >
+
+                        {tab.toUpperCase()}
+                    </TabLinkStyle>
+
                 ))}
 
             </TabStyle>
@@ -130,8 +134,8 @@ const HomeTableWrapper = () => {
 
                             <TableStyle key={parentIndex} >
                                 <thead>
-                                    <tr id={item}  >
-                                        <th align='left' colSpan={5} ref={scrollToRef}>{item}</th>
+                                    <tr   >
+                                        <th align='left' colSpan={5} ref={refs[item]} id={item}>{item}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
