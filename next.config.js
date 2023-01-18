@@ -11,20 +11,20 @@ const nextConfig = {
     return config;
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "www.collinsdictionary.com",
-        pathname: "/images/**",
-      },
+    // remotePatterns: [
+    //   {
+    //     protocol: "https",
+    //     hostname: "www.collinsdictionary.com",
+    //     pathname: "/images/**",
+    //   },
 
-      {
-        protocol: "https",
-        hostname: "img.freepik.com",
-        pathname: "/free-vector/**",
+    //   {
+    //     protocol: "https",
+    //     hostname: "img.freepik.com",
+    //     pathname: "/free-vector/**",
        
-      },
-    ],
+    //   },
+    // ],
     domains: [
       "www.collinsdictionary.com",
       "img.freepik.com",
