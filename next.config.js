@@ -25,6 +25,10 @@ const nextConfig = {
        
       },
     ],
+    domains: [
+      "www.collinsdictionary.com",
+      "img.freepik.com",
+    ]
   },
 };
 
